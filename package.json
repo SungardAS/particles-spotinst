@@ -1,6 +1,9 @@
 {
   "name": "particles-spotinst",
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "publishConfig": {
+    "tags": "latest"
+  },
   "description": "Condensation particles for building AWS CloudFormation templates.",
   "scripts": {
     "test": "./node_modules/.bin/mocha",
