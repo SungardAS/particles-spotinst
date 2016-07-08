@@ -1,0 +1,8 @@
+{{#resource "m:core" "base" type="AWS::IAM::Role"}}
+  "Properties": {
+    "AssumeRolePolicyDocument": {{partial "iam_assume_role_policy"}},
+    "ManagedPolicyArns": [
+      {{helper "m:core" "propertyValue" spotinstManagedPolicy}}
+    ]
+  }
+{{/resource}}

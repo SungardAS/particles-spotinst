@@ -1,0 +1,9 @@
+---
+description: Spotinst Account Policy
+---
+{{#resource "m:core" "base" type="AWS::IAM::ManagedPolicy"}}
+  "Properties": {
+    "Description": {{helper "m:core" "propertyValue" description}},
+    "PolicyDocument": {{partial "iam_account_policy"}}
+  }
+{{/resource}}

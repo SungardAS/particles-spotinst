@@ -1,0 +1,9 @@
+{{#layout}}
+  {{parameter "m:core" "base" type="String" default="arn:aws:iam::922761411349:root" logicalId="Principal"}}
+  {{parameter "m:core" "base" type="String" default="" logicalId="ExternalId"}}
+
+  {{resource "iam_managed_policy" logicalId="SpotinstManagedPolicy"}}
+  {{resource "iam_account_role" logicalId="SpotinstRole" spotinstManagedPolicy=(ref "SpotinstManagedPolicy") externalId=(ref "ExternalId")}}
+
+  {{output "m:core" "base" logicalId="SpotinstRoleArn" value='{"Fn::GetAtt" : ["SpotinstRole", "Arn"] }'}}
+{{/layout}}
